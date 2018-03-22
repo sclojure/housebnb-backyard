@@ -2,7 +2,7 @@ module.exports = {
 
   // Query homes from a given search.
   //  api/homes?search=SEARCHTERM
-  getPropertiesSearch: (req, res, next) => {
+  getPropertySearch: (req, res, next) => {
     const dbInstance = req.app.get('db');
     const { search } = req.query;
 
