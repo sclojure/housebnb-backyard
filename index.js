@@ -3,7 +3,7 @@ const express = require('express'),
     cors = require('cors'),
     massive = require('massive');
 const ctrlUsers = require('./controllers/controllerUsers');
-const ctrlHomes = require('./controllers/controllerHomes');
+const ctrlProperties = require('./controllers/controllerProperties');
 require('dotenv').config();
 
 const app = express();
@@ -33,12 +33,12 @@ app.put('/api/user', ctrlUsers.addUser)
 app.put('/api/user/update/:userId', ctrlUsers.updateUser)
 
 
-app.get('/api/homes', ctrlHomes.getHomesSearch)
-app.get('/api/home/:homeId', ctrlHomes.getHome)
-app.post('/api/add', ctrlHomes.addHome)
-app.put('/api/home/:homeId', ctrlHomes.updateHome)
-app.delete('/api/delete/:homeId', ctrlHomes.deleteHome)
-app.delete('/api/delete/:bookingId', ctrlHomes.deleteBooking)
+app.get('/api/properties', ctrlProperties.getPropertySearch)
+app.get('/api/property/:propertyId', ctrlProperties.getProperty)
+app.post('/api/add', ctrlProperties.addProperty)
+app.put('/api/property/:propertyId', ctrlProperties.updateProperty)
+app.delete('/api/delete/:propertyId', ctrlProperties.deleteProperty)
+app.delete('/api/delete/:bookingId', ctrlProperties.deleteBooking)
 
 
 
