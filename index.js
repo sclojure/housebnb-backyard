@@ -51,7 +51,8 @@ app.get('/api/property/:propertyId', ctrlProperties.getProperty)
 app.post('/api/add', isLoggedIn, ctrlProperties.addProperty)
 app.put('/api/property/:propertyId/update', isLoggedIn, ctrlProperties.updateProperty)
 app.delete('/api/delete/:propertyId', isLoggedIn, ctrlProperties.deleteProperty)
-app.delete('/api/delete/:bookingId', isLoggedIn, ctrlProperties.deleteBooking)
+
+app.put('/api/property/:propertyId/book', isLoggedIn, ctrlProperties.book)
 
 
 

@@ -63,11 +63,11 @@ module.exports = {
 
   // Delete Booking
   // api/homes/bookingId
-  deleteBooking: (req, res, next) => {
+  book: (req, res, next) => {
     const dbInstance = req.app.get('db');
-    const { bookingId } = req.params;
+    const { propertyId } = req.params;
 
-    dbInstance.properties.delete_booking({ bookingId })
+    dbInstance.properties.book({ propertyId })
       .then(response => res.status(200).send(response))
       .catch(error => console.log(error))
   },
