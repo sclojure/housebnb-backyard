@@ -38,9 +38,9 @@ module.exports = {
     dbInstance.users.auth_login({username, password})
       .then(
         (response) => {
-          session.userId = response;
-          res.status(200).send(response)
-          console.log('session:   ', session.userId);
+          req.session.userId = response;
+          res.status(200).send(response);
+          console.log('session:   ', req.session.userId);
           console.log('response:   ', response);
         })
       .catch(error => console.log(error))
@@ -53,7 +53,7 @@ module.exports = {
     .then(
       (response) => {
         req.session.userId = response;
-        res.status(200).send(response)
+        res.status(200).send(response);
       })
       .catch(error => console.log(error))
   }
