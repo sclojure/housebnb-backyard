@@ -1,6 +1,6 @@
 INSERT INTO users
-(username, password)
-VALUES(${username}, ${password});
+(username, password, first_name, last_name, bio)
+VALUES(${username}, ${password}, ${first_name}, ${last_name}, ${bio});
 
 SELECT user_id FROM users
 WHERE username = ${username} AND

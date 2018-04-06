@@ -48,8 +48,8 @@ module.exports = {
 
   register: (req, res, next) => {
     const dbInstance = req.app.get('db');
-    const { username, password } = req.body;
-    dbInstance.users.auth_register({username, password})
+    const { username, password, first_name, last_name, bio } = req.body;
+    dbInstance.users.auth_register({username, password, first_name, last_name, bio})
     .then(
       (response) => {
         req.session.userId = response;
